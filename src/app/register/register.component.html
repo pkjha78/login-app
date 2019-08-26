@@ -1,0 +1,40 @@
+<div class="col-md-6 user-container">
+  <h2 class="text-center">Add User</h2>
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="username">User Name:</label>
+      <input type="text" formControlName="username" placeholder="username" name="username" class="form-control" id="username" autofocus>
+      <div class="error" *ngIf="addForm.controls['username'].hasError('required') && addForm.controls['username'].touched">Username is required</div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" formControlName="password" placeholder="password" name="password" class="form-control" id="password">
+      <div class="error" *ngIf="addForm.controls['password'].hasError('required') && addForm.controls['password'].touched">Password is required</div>
+    </div>
+
+    <div class="form-group">
+      <label for="firstName">First Name:</label>
+      <input formControlName="firstName" placeholder="First Name" name="firstName" class="form-control" id="firstName">
+      <div class="error" *ngIf="addForm.controls['firstName'].hasError('required') && addForm.controls['firstName'].touched">First Name is required</div>
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Last Name:</label>
+      <input formControlName="lastName" placeholder="Last name" name="lastName" class="form-control" id="lastName">
+      <div class="error" *ngIf="addForm.controls['lastName'].hasError('required') && addForm.controls['lastName'].touched">Last Name is required</div>
+    </div>
+
+    <div class="form-group">
+      <label for="age">Age:</label>
+      <input type="number" formControlName="age" placeholder="age" name="age" class="form-control" id="age">
+    </div>
+
+    <div class="form-group">
+      <label for="salary">Salary:</label>
+      <input type="number" formControlName="salary" placeholder="salary" name="salary" class="form-control" id="salary">
+    </div>
+
+    <button class="btn btn-success">Update</button>
+  </form>
+</div>
